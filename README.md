@@ -1,1 +1,1 @@
-# NXP-i.mx95-Neutron-NPU-Passthrough
+# Neutron NPU Passthrough on NXP i.mx95
