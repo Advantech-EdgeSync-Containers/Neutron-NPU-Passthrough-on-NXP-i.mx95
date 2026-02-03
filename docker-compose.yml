@@ -1,0 +1,21 @@
+services:
+  neutron-npu-passthrough-on-nxp-i.mx95:
+    container_name: neutron-npu-passthrough-on-nxp-i.mx95
+    image: harbor.edgesync.cloud/nycu-cosmos-lab/neutron-npu-passthrough-on-nxp-i.mx95
+    privileged: false
+    cap_add:
+      - SYS_ADMIN
+      - SYS_RAWIO
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    working_dir: /workspace
+    devices:
+      - /dev/neutron0
+    volumes:
+      - /usr/lib/python3.13/site-packages/onnxruntime:/usr/local/lib/python3.13/dist-packages/onnxruntime:ro
+      - /usr/lib/python3.13/site-packages/onnxruntime-1.22.0.dist-info:/usr/local/lib/python3.13/dist-packages/onnxruntime-1.22.0.dist-info:ro
+    entrypoint: ["/bin/bash"]
+    network_mode: host
+    stdin_open: true
+    tty: true
+    restart: always
