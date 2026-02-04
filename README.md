@@ -39,7 +39,7 @@ All required runtimes, libraries, and demo assets are pre-configured, enabling i
 
 | Component       | Specification      |
 |-----------------|--------------------|
-| Target Hardware | [Advantech AOM-5521](https://www.advantech.com/en/https://www.advantech.com/zh-tw/products/77b59009-31a9-4751-bee1-45827a844421/aom-5521/mod_75b36e99-ac3f-4801-8b2b-1706ade1025d) |
+| Target Hardware | [Advantech AOM-5521](https://www.advantech.com/zh-tw/products/77b59009-31a9-4751-bee1-45827a844421/aom-5521/mod_75b36e99-ac3f-4801-8b2b-1706ade1025d) |
 | SoC             | [NXP i.MX95](https://www.nxp.com/products/I.MX95?tab=Documentation_Tab)   |
 | GPU             | Arm® Mali™ G310         |
 | NPU             | eIQ neutron N3-1034S    |
