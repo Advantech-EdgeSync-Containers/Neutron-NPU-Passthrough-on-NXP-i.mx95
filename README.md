@@ -147,6 +147,48 @@ Then SSH into the NXP device:
 ssh <username>@<aom5521-ip>  (add '-X' tag for X11 display)
 cd ~/Neutron-NPU-Passthrough-on-NXP-i.mx95
 ```
+### Setup the DTB for Neutron NPU
+1. Copy the DTB File
+
+- imx95-aom5521-a2-merged.dtb: [link](https://drive.google.com/file/d/1O4l8pRLYIUyme8CGmf25eu2AuWPMVMI-/view?usp=sharing)
+
+Copy `imx95-aom5521-a2-merged.dtb` to the following path:
+
+```
+/run/media/boot-mmcblk0p1/imx95-aom5521-a2-merged.dtb
+```
+
+2. Connect the Debug Cable to the PC
+
+You will need the following cables:
+
+* 10-pin IDC to DB9 RS-232 Cable
+* RS-232 DB9 Extension Cable
+* USB to RS-232 Adapter Cable
+
+
+3. Reboot the Board and Enter U-Boot
+
+Reboot the system.
+
+During the boot countdown, press any key to stop the autoboot process and enter the **U-Boot console**.
+
+
+4. Set the Device Tree File in U-Boot
+
+At the U-Boot prompt, enter the following commands:
+
+```
+setenv fdtfile imx95-aom5521-a2-merged.dtb
+saveenv
+```
+
+5. Reboot the System
+
+At the U-Boot prompt, enter:
+```
+boot
+```
 
 ### Installation
 
