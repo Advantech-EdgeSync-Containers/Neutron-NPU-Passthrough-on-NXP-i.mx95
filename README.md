@@ -120,10 +120,40 @@ advantech-onnxruntime-imx95-container/
 > If you are using **Linux**, no changes are needed — LF line endings are used by default.  
 > If you are on **Windows**, please follow the steps in [Windows Git Line Ending Setup](./windows-git-setup.md) before cloning to ensure scripts and configuration files work correctly on Device.
 
-```bash
-git clone https://github.com/Advantech-EdgeSync-Containers/Neutron-NPU-Passthrough-on-NXP-i.mx95.git
-cd Neutron-NPU-Passthrough-on-NXP-i.mx95
-```
+### Develop on device
+---
+#### Option 1 : Deploy Container with WEDA API
+
+1. Select the Docker Compose file that matches your device and platform directly
+   - `docker-compose.yml`: Advantech AOM-5521
+     
+2. [Use WEDA API to deploy container to the edge device](https://learn.advantech.com/weda/docs/Getting_Started/Deploy_Container_to_Device)
+
+
+#### Option 2: Auto Judge Platform Script
+1. Download repo and copy the project files to device
+
+   ![alt text](image.png)
+3. Unzip files and setup permission with following commands:
+    ```bash
+    unzip Neutron-NPU-Passthrough-on-NXP-i.MX95-main.zip
+    chmod +x -R Neutron-NPU-Passthrough-on-NXP-i.MX95-main
+    cd Neutron-NPU-Passthrough-on-NXP-i.MX95-main
+    ```
+4. launch the container
+    ```bash
+    ./run.sh
+    ```
+---
+#### Option 3: Docker Command Setup (manual judge platform)
+1. Copy the Docker Compose file that matches your device and platform directly
+- `docker-compose.yml`: Advantech AOM-5521
+
+2. Launch the container
+    ```bash
+    docker compose -f docker-compose.yml up -d
+    ```
+
 
 ### Transfer the `Neutron-NPU-Passthrough-on-NXP-i.mx95` folder to AOM-5521 device
 
